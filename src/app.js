@@ -1,23 +1,26 @@
 import "../src/style.css";
 import createToDo from "./todo";
-import form from "./form";
+import createform from "./form";
 const container = document.createElement("div");
 container.id = "form-container";
 document.body.appendChild(container);
+const todosArr = [];
 
-export default function renderDisplay() {
-  const element = document.createElement("div");
-  let todo1 = createToDo("complete project", "to do desc", "tomorrow", "10");
-  element.innerHTML = `
-  <h1>To do:</h1>
-  <p>${todo1.title}</p>
-  <p>${todo1.description}</p>
-  <p>${todo1.dueDate}</p>
-  <p>${todo1.priority}</p>
-  `;
-  document.body.appendChild(element);
-}
-
-renderDisplay();
-const todoForm = form();
+const todoForm = createform();
 container.appendChild(todoForm);
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  console.log("you clicked");
+  e.preventDefault();
+
+  const title = document.getElementById("title").value;
+  const description = document.getElementById("description").value;
+  const dueDate = document.getElementById("dueDate").value;
+  const priority = document.getElementById("priority").value;
+
+  const newToDo = createToDo(title, description, dueDate, priority);
+  todosArr.push(newToDo);
+  console.log(todosArr);
+  form.reset();
+});
