@@ -8,26 +8,30 @@
   </head>
   <body>
     <form>
-      <div>
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" />
-      </div>
-      <div>
-        <label for="desciption">desciption</label>
-        <input type="text" name="desciption" id="desciption" />
-      </div>
-      <div>
-        <label for="dueDate">Due Date</label>
-        <input type="date" name="date" id="dueDate" />
-      </div>
-      <div>
-        <label for="priority">Priority Level</label>
-        <select name="priority" id="priority">
-          <option value="default">Standard</option>
-          <option value="high">High</option>
-          <option value="low">Low</option>
-        </select>
-      </div>
+      <fieldset>
+        <legend>Create new to do item</legend>
+        <div>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+        <div>
+          <label for="description">description</label>
+          <input type="text" name="description" id="description" />
+        </div>
+        <div>
+          <label for="dueDate">Due Date</label>
+          <input type="date" name="date" id="dueDate" />
+        </div>
+        <div>
+          <label for="priority">Priority Level</label>
+          <select name="priority" id="priority">
+            <option value="default">Standard</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <div><button type="submit">Add todo</button></div>
+      </fieldset>
     </form>
   </body>
 </html>
