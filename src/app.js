@@ -1,5 +1,6 @@
 import "../src/style.css";
 import createToDo from "./todo";
+import form from "./form";
 
 export default function renderDisplay() {
   const element = document.createElement("div");
@@ -15,3 +16,4 @@ export default function renderDisplay() {
 }
 
 renderDisplay();
+document.body.appendChild(form());
