@@ -4,6 +4,7 @@ export default function createTodoForm() {
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
   legend.textContent = "Create new to-do item";
+  fieldset.appendChild(legend);
 
   const titleLabel = document.createElement("label");
   titleLabel.for = "title";

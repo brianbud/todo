@@ -1,6 +1,9 @@
 import "../src/style.css";
 import createToDo from "./todo";
 import form from "./form";
+const container = document.createElement("div");
+container.id = "form-container";
+document.body.appendChild(container);
 
 export default function renderDisplay() {
   const element = document.createElement("div");
@@ -16,4 +19,5 @@ export default function renderDisplay() {
 }
 
 renderDisplay();
-document.body.appendChild(form());
+const todoForm = form();
+container.appendChild(todoForm);
