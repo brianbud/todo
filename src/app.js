@@ -9,6 +9,10 @@ const todosArr = [];
 const todoForm = createform();
 container.appendChild(todoForm);
 
+const todoDiv = document.createElement("div");
+todoDiv.innerHTML = `<h1>To Do:</h1>`;
+container.appendChild(todoDiv);
+
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   console.log("you clicked");
@@ -22,5 +26,30 @@ form.addEventListener("submit", (e) => {
   const newToDo = createToDo(title, description, dueDate, priority);
   todosArr.push(newToDo);
   console.log(todosArr);
+  renderList();
   form.reset();
 });
+
+function renderList() {
+  const todoItems = document.createElement("div");
+  todosArr.forEach((todo) => {
+    todoItems.innerHTML = `
+  <div>
+      </p>${todo.title}</p>
+  </div>
+  <div>
+      </p>${todo.description}</p>
+  </div>
+  <div>
+    <span>Due on:</span> </span>${todo.dueDate}</span>
+  </div>
+  <div>
+    <span>Priority:</span><span>${todo.priority}</span>
+ </div>
+`;
+  });
+
+  container.appendChild(todoItems);
+}
+
+renderList();
